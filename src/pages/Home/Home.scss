@@ -1,0 +1,327 @@
+@import "../../utilities/variable.scss";
+
+// Keyframes
+
+@keyframes rotateClockwise {
+    from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(1turn);
+      }
+}
+
+@keyframes rotateCounterClockwise {
+    from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(-1turn);
+      }
+}
+
+.link {
+    text-decoration: none;
+    color: $font-color;
+}
+.home__container {
+    height: 100vh;
+    background: $background-color;
+
+    position: relative;
+    .home__topBar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        
+
+        padding: 0 5rem;
+
+        color: $font-color;
+        font-family: $main-font;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        .logo {
+            font-family: $accent-font;
+            display: flex;
+            justify-content: flex-start;
+
+            font-size: 2.5rem;
+          
+
+        }
+        .homeBtn {
+            display: flex;
+            justify-content: center;
+            object-fit: cover;
+            .homeIcon {
+                border: 5px solid $font-color;
+                border-radius: 100%;
+                padding: 0.8rem;
+                font-size: 4.5rem;
+            }
+         
+
+        }
+        .sayHi {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.5rem;
+        }
+    }
+
+    .home__leftBar {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        width: 15%;
+        height: 85%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        .navItem {
+            color: $font-color;
+            font-family: $main-font;
+            font-size: 1.8rem;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            margin-bottom: 4rem;
+        }
+    }
+    .home__rightBar {
+        
+        position: absolute;
+        width: 15%;
+        top: 15%;
+        right: 0;
+        height: 85%;
+        padding-top: 8rem;
+
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+
+        overflow: hidden;
+        .socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            margin-top: 5rem;
+            .socialIcon {
+                color: $font-color;
+                font-family: $main-font;
+                font-size: 1.8rem;
+                margin-top: 2rem;
+
+                cursor: pointer;
+              
+            }
+          
+            &::after {
+                content: "";
+                position: relative;
+                border: 2px solid $font-color;
+                border-radius: 2rem;
+                height: 100vh;
+                // width: 0.2rem;
+                margin-top: 3rem;
+                
+                opacity: 0.6;
+            }
+        }
+    }
+    .home__bottomBar {
+        position: absolute;
+        width: 85%;
+        left: 0;
+        bottom: 0;
+        height: 15%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding-left: 15rem;
+
+        .navItem {
+            color: $font-color;
+            font-family: $main-font;
+            font-size: 1.8rem;
+            margin: 0 4rem;
+           &.a {
+               text-decoration: none;
+           }
+         
+        }
+
+    }
+    .home__main {
+        display: flex;
+        flex-direction: column;
+   
+        width: 70%;
+        height: 70%;
+
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        .main__viewTrue {
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+
+            width: 100%;
+            height: 100%;
+
+            .true__top {
+                border: 2px solid $shadow-color;
+                border-radius: 1rem;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                
+                position: relative;
+                width: 100%;
+
+                padding: 1rem;
+                .true__topLeft {
+                    color: $font-color;
+                    font-family: $main-font;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding-left: 1rem;
+                    h2 {
+                        font-size: 2.2rem;
+                        span {
+                            color: $secondary-color;
+                        }
+                    }
+                    h6 {
+                        font-size: 1.5rem;
+                        &.h6 {
+                            letter-spacing: 0.3rem;
+                            margin-top: 1.5rem;
+                        }
+                    }
+                    p {
+                        margin-top: 0.5rem;
+                        opacity: 0.5;
+                        letter-spacing: 0.1rem;
+                    }
+                }
+                .true__topRight {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    padding: 1rem 4rem;
+                    img {
+                        width: 22rem;
+                        height: 20rem;
+                        border: 3px solid $secondary-color;
+                        border-radius: 100%;
+                        padding: 0.5rem;
+                    }
+
+                }
+            }
+            .true__bottom {
+                display: flex;
+                align-self: flex-end;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                .true__bottomIcon {
+                    border: 5px dashed $secondary-color;
+                    border-radius: 100%;
+                    display: flex;
+                    // width: 10rem;
+                    justify-content: center;
+                    padding: 1.2rem 1rem;
+
+                    animation: rotateCounterClockwise 9s infinite linear;
+
+
+                    cursor: pointer;
+
+                    transition: all 0.3s linear;
+                    .icon {
+                        color: $shadow-color;
+                        font-size: 2rem;
+
+                        animation: rotateClockwise 3s infinite linear;
+
+                        transition: all 0.3s linear;
+                    }
+                    &:hover {
+                        border-color: $shadow-color;
+                        .icon {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+                .true__bottomMessage {
+                    color: $font-color;
+                    font-family: $main-font;
+                    font-size: 0.8rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                }
+            }
+
+        }  
+        .main__viewFalse {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+            .false__icon {
+                border: 5px dashed $secondary-color;
+                border-radius: 100%;
+                padding: 3rem 2rem;
+
+                cursor: pointer;
+
+                animation: rotateCounterClockwise 9s infinite linear;
+
+                transition: all 0.3s linear;
+                .icon {
+                    color: $shadow-color;
+                    font-size: 8rem;
+
+                    animation: rotateClockwise 3s infinite linear;
+
+                    
+                    transition: all 0.3s linear;
+                }
+                &:hover {
+                    border-color: $shadow-color;
+                    .icon {
+                        color: $secondary-color;
+                    }
+                }
+            }
+            .false__message {
+                display: flex;
+                margin-top: 1rem;
+                span {
+                    color: $font-color;
+                    font-family: $main-font;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
